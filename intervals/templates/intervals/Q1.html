@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Question 1/10</center> {% endblock %} {% block content %}
+{% autoescape off %}
+{% formfields %}
+{% endautoescape %}
+<center>{% next_button %}</center>
+<script>
+    function checkSubmit() {
+        let form = document.getElementById('form');
+        let isValid = form.reportValidity();
+        if (!isValid) return;
+
+        let warnings = [];
+
+        let instructions = document.getElementsByName('instructions')[0].value;
+        if (instructions === "True") {
+            warnings.push("Are you sure you don't want to contribute anything?");
+        }
+
+        if (warnings.length > 0) {
+            warnings.push("Come back to the question")
+            let confirmed = window.confirm(warnings.join('\r\n'));
+            if (!confirmed) return;
+        }
+
+        form.submit();
+    }
+</script>
+
+{% endblock %}

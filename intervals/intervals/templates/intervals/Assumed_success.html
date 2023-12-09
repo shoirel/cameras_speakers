@@ -1,0 +1,7 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>How do you think, how many of your {{ ANSWERED }} intervals covered the actual numbers?</center> {% endblock %} {% block content %}
+
+{% autoescape off %}
+{% formfield player.assumed %}
+{% endautoescape %}
+
+<center>{% next_button %}</center> {% endblock %}

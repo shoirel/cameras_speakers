@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+{%if q23 != "(skipped)" and q24 != "(skipped)"%}
+    {% if correct <= q24 and q23 <= correct %}
+    <p style="line-height:1.7;font-size:20px">Your interval covers the actual value! {% if correct <= q24 and q23 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% else %}
+    <p style="line-height:1.7;font-size:20px">Unfortunately, your interval does not cover the actual value. {% if correct <= q24 and q23 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% endif%}
+{%else%}
+{%endif%}
+
+<center>{% next_button %}</center>
+
+{% endblock %}

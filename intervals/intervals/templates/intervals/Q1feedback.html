@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+{%if "e-mails" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> How many e-mails does a typical EC employee send (from his or her corporate account) on a typical working day?</p></b>
+<p></p>
+{%endif%}
+<p></p>
+<p style="line-height:1.7;font-size:20px">The actual value is <font color =\'#006400\'>{{ correct}}</font>. </p>
+{%if q1 != "(skipped)" and q2 != "(skipped)"%}
+    {% if correct <= q2 and q1 <= correct %}
+    <p style="line-height:1.7;font-size:20px">Your interval covers the actual value! {% if correct <= q2 and q1 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% else %}
+    <p style="line-height:1.7;font-size:20px">Unfortunately, your interval does not cover the actual value. {% if correct <= q2 and q1 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% endif%}
+{%else%}
+<p style="line-height:1.7;font-size:20px">Skip the page</p>
+{%endif%}
+<center>{% next_button %}</center>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<font face="Trebuchet MS">{% extends "global/Page.html" %}{% load otree %} {% block title %}<center>Results - round 1 out of 3</center> {% endblock %} {% block content %}
+{% autoescape off %}
+<br>
+
+
+<p>
+    You started with an endowment of {{ ENDOWMENT }},
+    of which you contributed {{ player.contribution }}.
+
+
+        <table class="table-condensed" style="width:500px; margin-top:20px;">
+        <tr><td>Other participants contributed:</td><td></td></tr>
+        {% for p in player.get_others_in_group %}
+            <tr><td></td><td>{{ p.contribution }}</td></tr>
+        {% endfor %}
+        </table>
+<br></br>
+        In total, {{ group.total_contribution }} points were contributed to the public good.
+    Multiplied by two and distributed equally, this gives {{ individual_earnings }} points.
+    Adding the {{ left }} points
+you have NOT contributed, this gives you the final result for this round
+of {{ player.payoff }} points.
+
+</p>
+
+
+{% formfields %}
+{% endautoescape %}
+<br><br>
+<center>
+<button class="btn btn-primary" id = "demo" style = "background-color:lightgreen; font-weight:bold; border-radius: 25px; border-color:green; color:black">Next</button>
+</center>
+
+</font>
+{% endblock %}

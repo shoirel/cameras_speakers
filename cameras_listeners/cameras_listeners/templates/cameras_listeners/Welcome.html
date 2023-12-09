@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}{% load otree %}
+{% block title %} <center>Welcome!</center>{% endblock %}
+
+{% block content %}
+
+<p style="font-size:18px"></p>
+<p style="line-height:1.7;font-size:18px">
+You have just listened to a short presentation of a project.
+</p>
+<p style="line-height:1.7;font-size:18px">
+        Please use the window below to <b>summarise, in about 200 words</b>, how you understand the project. Please <b>base only on the presentation</b> you have heard.
+    Anonymized summaries will be sent to the Speaker. You will get his or her feedback on your individual summary. You may write your text in a text editor and past it here.
+</p>
+
+{% autoescape off %}
+{% formfields %}
+
+<script>
+for (let ele of document.getElementsByTagName('textarea')) {
+  ele.rows = 20;
+  ele.cols = 100;
+}
+</script>
+
+<center><p style="line-height:1.7;font-size:18px">
+    <button class="otree-btn-next btn btn-primary">
+        Go!
+    </button>
+    </p></center>
+
+
+{% endautoescape %}
+{% endblock %}

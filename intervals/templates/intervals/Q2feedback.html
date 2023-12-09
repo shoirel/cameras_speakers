@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+<p style="line-height:1.7;font-size:20px">The actual value is <b><font color =\'#006400\'>{{ correct}}</font></b>.</p>
+{%if q3 != "(skipped)" and q4 != "(skipped)"%}
+    {% if correct <= q4 and q3 <= correct %}
+    <p style="line-height:1.7;font-size:20px">Your interval covers the actual value! {% if correct <= q4 and q3 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% else %}
+    <p style="line-height:1.7;font-size:20px">Unfortunately, your interval <b>does not cover</b> the actual value. {% if correct <= q4 and q3 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% endif%}
+{%else%}
+{%endif%}
+
+<center>{% next_button %}</center>
+
+{% endblock %}

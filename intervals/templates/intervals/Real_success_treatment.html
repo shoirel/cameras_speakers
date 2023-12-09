@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+
+<p style="line-height:1.7;font-size:20px">In total,<b>{% if CORRECT_P > CORRECT and CORRECT_P > 0 %} only <font color="red"> {{ CORRECT }}</font>
+    {% elif CORRECT_P > CORRECT and CORRECT <= 0 %} <font color="red"> none </font> {% else %}<font color="green"> {{ CORRECT }}</font>{% endif %} of your {{ ANSWERED }} intervals </b> covered the actual number – given that you were supposed to be 90% sure,
+    it would be expected that <font color="green"><b>{{ CORRECT_P }}</b></font> of them do.
+    {% if CORRECT_P > CORRECT %} This would suggest that you overestimated the
+    precision of your judgment or knowledge. In other words, the intervals you provided were too narrow. They did not
+    correctly represent the degree of uncertainty involved.{% else %}{% endif %}
+</p>
+</h6>
+<center>{% next_button %}</center>
+
+{% endblock %}
