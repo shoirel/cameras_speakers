@@ -1,0 +1,18 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}Contribute{{ endblock }}
+
+{{ block content }}
+
+<p>
+    This is a public goods game with
+    {{ C.PLAYERS_PER_GROUP }} players per group,
+    an endowment of {{ C.ENDOWMENT }}
+    Each token put into the public good by any player will be multiplied by {{ C.MULTIPLIER }} and distrubed evenly amongst all members.
+</p>
+
+
+{{ formfields }}
+
+{{ next_button }}
+
+{{ endblock }}

@@ -1,0 +1,24 @@
+
+<font face="Trebuchet MS">{% extends "global/Page.html" %}{% load otree %} {% block title %}<center>Judgement</center> {% endblock %} {% block content %}
+{% autoescape off %}
+<br>
+
+
+<p>
+You had a not-too-high salary of {{ salary }} PLN to begin with. You'd give {{ player.altruism }} PLN to a random stranger.</p>
+
+
+<br></br>
+    <p>
+        Verdict: {{ judgement }}. </p>
+    <p> But hey, you've got {{ left }} PLN for chocolate. </p>
+
+{% endautoescape %}
+<br><br>
+<center>
+<button class="btn btn-primary" id = "demo" style = "background-color:lightgreen; font-weight:bold; border-radius: 25px; border-color:green; color:black">Next</button>
+</center>
+
+</font>
+{% endblock %}
+

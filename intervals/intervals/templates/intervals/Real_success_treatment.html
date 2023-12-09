@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+<p style="line-height:1.7;font-size:20px">For your information, the answers to most of the questions were obtained
+directly from DIGIT or OIB or were found in EC's HR Key Figures. </p>
+    {% if CORRECT_P > CORRECT and CORRECT >= 1 and ANSWERED > 1 %} <p style="line-height:1.7;font-size:20px">In total,<b> only <font color="red"> {{ CORRECT }}</font> of your {{ ANSWERED }} intervals </b> covered the actual number – given that you were supposed to be 90% sure,
+    it would be expected that <font color="green"><b>{{ CORRECT_P }}</b></font> of them do. This would suggest that you overestimated the
+    precision of your judgment or knowledge. In other words, the intervals you provided were too narrow. They did not
+    correctly represent the degree of uncertainty involved.</p>
+    {% elif CORRECT_P > CORRECT and ANSWERED <= 1 and ANSWERED >= 1 %}<p style="line-height:1.7;font-size:20px"> Your interval<font color="red"> <b>did not</b></font> cover the actual number. Recall that it was supposed to have a 90% chance to cover it.
+    This would suggest that you overestimated the precision of your judgment or knowledge. In other words, the interval you provided was too narrow.
+    It did not correctly represent the degree of uncertainty involved.</p>
+    {% elif CORRECT_P < CORRECT and ANSWERED <= 1 and ANSWERED >= 1 %}<p style="line-height:1.7;font-size:20px"> Your interval<font color="green"><b> covered</b> </font> the actual number. Recall that it was supposed to have a 90% chance to cover it.
+    This would suggest that you did not overestimate the precision of your judgment or knowledge. In other words, the interval you provided was appropriate.
+    It correctly represented the degree of uncertainty involved.</p>
+    {% elif CORRECT_P > CORRECT and CORRECT <= 0 and ANSWERED > 1 %} <p style="line-height:1.7;font-size:20px">In total,<b> <font color="red"> none </font> of your {{ ANSWERED }} intervals </b> covered the actual number – given that you were supposed to be 90% sure,
+    it would be expected that <font color="green"><b>{{ CORRECT_P }}</b></font> of them do. This would suggest that you overestimated the
+    precision of your judgment or knowledge. In other words, the intervals you provided were too narrow. They did not
+    correctly represent the degree of uncertainty involved.</p>
+    {% else %}<p style="line-height:1.7;font-size:20px"><font color="green"> {{ CORRECT }}</font> of your {{ ANSWERED }} intervals </b> covered the actual number – given that you were supposed to be 90% sure,
+    it would be expected that <font color="green"><b>{{ CORRECT_P }}</b></font> of them do. This would suggest that you did not overestimate the
+    precision of your judgment or knowledge. In other words, the intervals you provided were appropriate. They
+    correctly represented the degree of uncertainty involved.</p>{% endif %}
+
+<center>{% next_button %}</center>
+
+{% endblock %}

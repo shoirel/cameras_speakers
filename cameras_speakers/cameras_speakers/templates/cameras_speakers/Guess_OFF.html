@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Guessing Game</center> {% endblock %} {% block content %}
+
+
+{% autoescape off %}
+
+<p style="line-height:1.7;font-size:18px">
+    Each speaker delivers the same talk twice, in one case with cameras on, in the other with cameras off.
+    Listeners are randomly assigned to one of these cases.
+</p>
+<p style="line-height:1.7;font-size:18px"><b>
+As you recall, Listeners are asked how much they enjoyed the presentation. Please
+guess whether these ratings will be, on average:</b>
+</p>
+{% formfield player.guess1_reversed %}
+<p style="line-height:1.7;font-size:18px"><b>
+As you recall, Listeners are asked how clear the presentation was. Please guess
+whether these ratings will be, on average:</b>
+</p>
+{% formfield player.guess2_reversed %}
+<p style="line-height:1.7;font-size:18px"><b>
+As you recall, Listeners are asked how well the speaker could connect with the
+audience. Please guess whether these ratings will be, on average:</b>
+</p>
+{% formfield player.guess3_reversed %}
+<p style="line-height:1.7;font-size:18px"><b>
+After each talk, the speaker is asked to rate their own performance. Please guess
+whether these ratings will be, on average:</b>
+</p>
+{% formfield player.guess4_reversed %}
+<p style="line-height:1.7;font-size:18px"><b>
+Speakers are also asked to assess quality of the summaries written by the Listeners
+(not knowing if given summary was written after a meeting with cameras on vs. off).
+Please guess whether these ratings will be, on average:</b>
+</p>
+{% formfield player.guess5_reversed %}
+
+{% endautoescape %}
+
+<center>{% next_button %}</center> {% endblock %}

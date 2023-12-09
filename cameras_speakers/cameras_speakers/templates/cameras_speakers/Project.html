@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Thanks!</center> {% endblock %} {% block content %}
+
+
+{% autoescape off %}
+
+
+<p style="line-height:1.7;font-size:19px"><center><b>What is this project about?</b></center></p>
+<p style="line-height:1.7;font-size:17px"> As you know, thousands of online meetings take place at the Commission every
+week. Turning the cameras on may improve communication and participants’
+experience but the opposite may be true in some cases and for some people.
+Moreover, video streaming has some economic and environmental costs and may
+worsen the quality of the audio. In this project, we have several talks, delivered with
+vs. without the cameras, to compare everyone’s experience, holding other factors
+unchanged.</p>
+<p style="line-height:1.7;font-size:17px"></p>
+<p style="line-height:1.7;font-size:17px"> If you would like to <b>share your thoughts</b> about the pros and cons of using cameras in
+online meetings at the EC, please use the space below.</p>
+{% formfield player.cameras_good %}
+<p style="line-height:1.7;font-size:17px">
+If you are as curious as we are about the results, <b>please like our post
+XXXXXXXXXXXX</b> and we’ll get back to you as soon as we have the results. We’ll
+appreciate it if you could encourage your colleagues to participate but <b>do not discuss
+the details before they participate; in this way, we can avoid “contamination” of the results.</b></p>
+<p style="line-height:1.7;font-size:17px"></p>
+<p style="line-height:1.7;font-size:17px">
+    Can you guess the results of this study? The participant who comes closest to actual results will be rewarded! Please choose what you would like to do now.
+</p>
+<center>{% formfield player.no_guess %}</center>
+
+
+<center><p style="line-height:1.7;font-size:18px">
+    <button class="otree-btn-next btn btn-primary", style="background-color: #04AA6D;  color: white">
+        Next
+    </button>
+    </p></center>
+
+{% endautoescape %}
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+{%if "native speakers" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> The European Commission has about 32,000 employees. How many of them are German native speakers?</p></b>
+{%elif "temporary staff" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> The European Commission has about 32,000 employees. How many of them are temporary staff? </p></b>
+{%elif "European Commissioners" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> How many different people ever served as European Commissioners (it counts as one if the same individual was a member of two or more Commissions)?</p></b>
+{%elif "von der Leyen Commission" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> What is she average age of the 27 members of the von der Leyen Commission?</p></b>
+{%elif "entertainment allowance" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> What was, back in 2016, the monthly “entertainment allowance” of the President of the Commission (in EUR)?</p></b>
+{%elif "office paper" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> The EC used about 300 tonnes of office paper in 2020. How many tonnes did it use in 2019? </p></b>
+{%elif "individual printers" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> The EC had about 7360 individual printers in 2018. How many did it have in 2019?</p></b>
+{%elif "laptops" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> How many laptops does the EC purchase yearly?</p></b>
+{%elif "IT helpdesk" in Q %}
+<b><p style="line-height:1.7;font-size:21px"> What is the average daily number of tickets (requests) that the IT helpdesk of the EC receives?</p></b>
+{%else %}
+<p></p>
+{%endif%}
+<p></p>
+
+<p style="line-height:1.7;font-size:20px">The actual value is <font color =\'#006400\'>{{ correct}}</font>. </p>
+{%if q7 != "(skipped)" and q8 != "(skipped)"%}
+    {% if correct <= q8 and q7 <= correct %}
+    <p style="line-height:1.7;font-size:20px">Your interval covers the actual value! {% if correct <= q8 and q7 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% else %}
+    <p style="line-height:1.7;font-size:20px">Unfortunately, your interval does not cover the actual value. {% if correct <= q8 and q7 <= correct %} &#9989;.{% else %} &#10060;. {% endif %}</p>
+    {% endif%}
+{%else%}
+{%endif%}
+
+<center>{% next_button %}</center>
+
+{% endblock %}

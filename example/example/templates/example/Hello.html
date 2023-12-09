@@ -1,0 +1,26 @@
+
+<font face="Trebuchet MS">{% extends "global/Page.html" %}{% load otree %} {% block title %}<center>Questions</center> {% endblock %} {% block content %}
+{% autoescape off %}
+
+  <p>
+  Welcome! We would like to ask you a few important questions that may seem very impertinent. Please answer them.
+  </p>
+  <p>
+    Please bear in mind that your salary is {{salary}}.
+  </p>
+
+{% formfields %}
+
+{% endautoescape %}
+
+  <p>
+  Now, please click "Next" and you will see what we think about you.
+  </p>
+<br>
+<br>
+<br>
+<br>
+
+<center>{% next_button %}</center>
+</font>
+{% endblock %}

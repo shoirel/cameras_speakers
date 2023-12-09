@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}{% load otree %}
+{% block title %} <center>Welcome!</center>{% endblock %}
+
+{% block content %}
+
+{% autoescape off %}
+{% formfields %}
+{% endautoescape %}
+
+<p style="font-size:18px"></p>
+<p style="line-height:1.7;font-size:18px">
+    In this study, you will see several questions about numbers concerning the European Commission. For example, you could be asked, how many people worked for INTPA on January 1, 2022. <b>Now, we are not asking for your “best guess”. Instead, we ask you to give us an interval: two such numbers that you are 90% sure that the correct answer lies somewhere between the two. </b> Thus, out of 10 intervals that you provide, on average, 9 should cover the correct answer.
+</p>
+
+<p style="line-height:1.7;font-size:18px">For example, if you have no clue how many people work for INTPA, you could give a wide interval, for example say the number is between 100 and 10,000 <b>(but not between 0 and 1 million – then you’d be 100%, not 90% sure)</b>. If you believe you know it quite exactly, you could perhaps say it’s something between 2700 and 3000. Which would indeed cover the true value of 2924.   </p>
+
+<p style="line-height:1.7;font-size:18px">Please <b>do not google the answers </b>(they are hard to find anyway) - we will provide the sources of info at the end. Some questions can be very difficult. Just give a wide interval! Some questions may also seem peculiar or unrelated to your daily work. However, we hope that <b>after seeing the feedback, you will appreciate that participation has provided you with some valuable insight</b> nonetheless. There will be 10 questions and <b>the whole thing will only take  a few minutes. Still, you can jump to the end at any point. You can also leave a specific question unanswered </b> and move on to the next question. Ready?
+</p>
+<p style="line-height:1.7;font-size:13px">
+    By clicking the button provided below you confirm that you freely
+participate in this online survey conducted by the Joint Research Centre
+of the European Commission. You confirm that you are aware that you can stop at any point. You accept that anonymous data collected, collated with data from many other participants, may be used in publications.
+</p>
+
+<center><p style="line-height:1.7;font-size:18px">
+    <button class="otree-btn-next btn btn-primary">
+        Go!
+    </button>
+    </p></center>
+
+{% endblock %}

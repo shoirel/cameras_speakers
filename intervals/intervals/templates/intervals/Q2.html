@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Question 2/10</center> {% endblock %} {% block content %}
+
+
+{% autoescape off %}
+
+<!--{%if "native speakers" in Q %}-->
+<!--<p style="line-height:1.7;font-size:20px"><span style="line-height:1.7;font-size:18px"><font color ="#43a047">Please answer in <b>absolute numbers</b>, not in terms of percentage of the total number of employees.</font></span></p>-->
+<!--{% elif "temporary staff" in Q %}-->
+<!--<p style="line-height:1.7;font-size:20px"><span style="line-height:1.7;font-size:18px"><font color ="#43a047">Please answer in <b>absolute numbers</b>, not in terms of percentage of the total number of employees. </font></span></p>-->
+<!--{%else%}-->
+<!--<p></p>-->
+<!--{%endif%}-->
+
+{% formfields %}
+{% endautoescape %}
+
+<center>{% next_button %}</center> {% endblock %}
+

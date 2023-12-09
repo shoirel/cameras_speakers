@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Introductory questions</center> {% endblock %} {% block content %}
+{% autoescape off %}
+
+{% formfield player.satisfied %}
+
+<p style="line-height:1.7;font-size:16px"><font color="#009933">
+    Immediately after your talk, we have asked the audience the following questions. For each of them, please guess how they answered <b> on average:
+</b>
+</font>
+</p>
+
+{% formfield player.like %}
+{% formfield player.enjoy %}
+{% formfield player.clarity %}
+{% formfield player.connection %}
+{% formfield player.easiness %}
+
+<p style="line-height:1.7;font-size:16px"><font color="#009933">
+Any reflections on your experience as a Speaker?
+</font></p>
+
+{% formfield player.reflections %}
+{% formfield player.rec_kept %}
+
+
+<center>{% next_button %}</center>
+
+{% endautoescape %}
+
+{% endblock %}

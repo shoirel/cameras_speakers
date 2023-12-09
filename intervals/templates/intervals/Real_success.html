@@ -1,0 +1,97 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Feedback</center> {% endblock %} {% block content %}
+
+<h2>
+    Now, compare your responses to actual numbers:
+</h2>
+
+
+{% if q1 != "(skipped)" and q2 != "(skipped)" %}
+    <h4>
+        <b>◎</b> How many e-mails does a typical EC employee send (from his or her corporate account) on a typical working day?
+    </h4>
+    <p style="line-height:1.7;font-size:19px">
+        You were 90% sure it was between {{ q1 }} and {{ q2 }}. In fact, it’s about <b><font color ='green'>53</font></b> emails.{% if 53 <= q2 and q1 <= 53 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+
+{%if q3 != "(skipped)" and q4 != "(skipped)"%}
+<h4>
+   <b>◎</b> The European Commission has about 32,000 employees. How many of them are temporary staff?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q3 }} and {{ q4 }}. In fact, it’s about <b><font color ='green'>2340</font></b> employees.{% if 2340 <= q4 and q3 <= 2340 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+
+{%if q5 != "(skipped)" and q6 != "(skipped)"%}
+<h4>
+    <b>◎</b> The European Commission has about 32,000 employees. How many of them are temporary staff?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q5 }} and {{ q6 }}. In fact, it’s about <b><font color ='green'>233</font></b> employees.{% if 233 <= q6 and q5 <= 233 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q7 != "(skipped)" and q8 != "(skipped)"%}
+<h4>
+    <b>◎</b> What is she average age of the 27 members of the von der Leyen Commission?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q7 }} and {{ q8 }}. In fact, it’s about <b><font color ='green'>59</font></b> years.{% if 59 <= q8 and q7 <= 59 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q9 != "(skipped)" and q10 != "(skipped)"%}
+<h4>
+    <b>◎</b> What was, back in 2016, the monthly “entertainment allowance” of the President of the Commission?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q9 }} and {{ q10 }}. In fact, it’s about <b><font color ='green'>1418</font></b> EUR.{% if 1418 <= q10 and q9 <= 1418 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q11 != "(skipped)" and q12 != "(skipped)"%}
+<h4>
+    <b>◎</b> The EC used about 300 tonnes of office paper in 2020. How many tonnes did it use in 2019?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+   You were 90% sure it was between {{ q11 }} and {{ q12 }}. In fact, it’s about <b><font color ='green'>710</font></b> tonnes.{% if 710 <= q12 and q11 <= 710 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q13 != "(skipped)" and q14 != "(skipped)"%}
+<h4>
+    <b>◎</b> The EC had about 7360 individual printers in 2018. How many did it have in 2019?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+   You were 90% sure it was between {{ q13 }} and {{ q14 }}. In fact, it’s about <b><font color ='green'>3503</font></b>. {% if 3503 <= q14 and q13 <= 3503 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q15 != "(skipped)" and q16 != "(skipped)"%}
+<h4>
+   <b>◎</b> Approximately how many laptops does the EC purchase yearly?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q15 }} and {{ q16 }}. In fact, it’s about <b><font color ='green'>9000</font></b>. {% if 9000 <= q16 and q15 <= 9000 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q17 != "(skipped)" and q18 != "(skipped)"%}
+<h4>
+    <b>◎</b> What is the average <b>daily</b> number of tickets (requests) that the IT helpdesk of the EC receives?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q17 }} and {{ q18 }}. In fact, it’s about <b><font color ='green'>2250</font></b>. {% if 2250 <= q18 and q17 <= 2250 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+{%if q19 != "(skipped)" and q20 != "(skipped)"%}
+<h4>
+   <b>◎</b> The European Commission has about 32,000 employees. How many of them are German native speakers?
+</h4>
+<p style="line-height:1.7;font-size:19px">
+    You were 90% sure it was between {{ q19 }} and {{ q20 }}. In fact, it’s about <b><font color ='green'>2700</font></b> employees.{% if 2700 <= q20 and q19 <= 2700 %} &#9989;{% else %} &#10060; {% endif %}
+</p>
+{%else%}{%endif%}
+
+<p style="line-height:1.7;font-size:20px">As you can see,<b>{% if CORRECT_P > CORRECT %} only {% else %}{% endif %} {{ CORRECT }} of your {{ ANSWERED }} intervals </b> covered the actual number – given that you were supposed to be 90% sure, it would be expected that <b>{{ CORRECT_P }}</b> of them do. {% if CORRECT_P > CORRECT %}This would suggest that you overestimated the precision of your judgment or knowledge. In other words, the intervals you provided were too narrow. They did not correctly represent the degree of uncertainty involved.{% else %}{% endif %}
+</p>
+
+
+<center>{% next_button %}</center>
+
+{% endblock %}

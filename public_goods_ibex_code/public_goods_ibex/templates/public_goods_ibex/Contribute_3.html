@@ -1,0 +1,33 @@
+<font face="Trebuchet MS">{% extends "global/Page.html" %}{% load otree %} {% block title %}<center>Contribute</center> {% endblock %} {% block content %}
+{% autoescape off %}
+
+
+<p>
+Remember - this is a public goods game with {{ PLAYERS_PER_GROUP }} players per group, an endowment of {{ ENDOWMENT }}. Each point put into the public good by any player will be multiplied by {{ MULTIPLIER }} and distributed evenly amongst all members.
+</p>
+<br>
+
+
+<center>
+<input type="range" name="contribution_3" min="0" max="{{ ENDOWMENT }}" oninput="updateDescription(this)">
+<p id="description"></p>
+<script>
+    let description = document.getElementById('description');
+    function updateDescription(input) {
+        let give = parseInt(input.value);
+        let keep = 100 - give;
+        description.innerText = `Give ${give} points and keep ${keep} for yourself.`
+    }
+</script>
+</center>
+
+{% endautoescape %}
+<br>
+<br>
+<br>
+<br>
+<center>
+<button class="btn btn-primary" id = "demo" style = "background-color:lightgreen; font-weight:bold; border-radius: 25px; border-color:green; color:black">Next</button>
+</center>
+</font>
+{% endblock %}

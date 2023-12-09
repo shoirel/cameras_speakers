@@ -1,0 +1,7 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Do you recall whether your interval covered the actual number?</center> {% endblock %} {% block content %}
+
+{% autoescape off %}
+{% formfield player.assumed_one %}
+{% endautoescape %}
+
+<center>{% next_button %}</center> {% endblock %}

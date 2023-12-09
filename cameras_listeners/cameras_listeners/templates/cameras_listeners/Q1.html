@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}{% load otree %} {% block title %} <center>Your Experience</center> {% endblock %} {% block content %}
+{% autoescape off %}
+{% formfields %}
+{% endautoescape %}
+
+<script>
+for (let ele of document.getElementsByTagName('textarea')) {
+  ele.rows = 10;
+  ele.cols = 100;
+}
+</script>
+<center>{% next_button %}</center>
+
+
+{% endblock %}
